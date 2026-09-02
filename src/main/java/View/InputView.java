@@ -1,19 +1,15 @@
 package View;
 
-import java.util.Scanner;
+import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-    Scanner input;
 
-    public InputView(Scanner input) {
-        this.input = input;
+    public String getUserNumber() {
+        return Console.readLine();
     }
 
-    public int getUserNumber(){
-        return input.nextInt();
+    public String getExitorAgain() {
+        return Console.readLine();
     }
-    public int getExitorAgain(){
-        return input.nextInt();
-    }
-    
+
 }
