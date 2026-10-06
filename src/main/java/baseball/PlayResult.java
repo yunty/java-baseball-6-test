@@ -11,20 +11,33 @@ public class PlayResult {
         this.ball = 0;
     }
 
-    private PlayResult(GameStatus gameStatus, int strike, int ball) {
-        this.gameStatus = gameStatus;
+    private PlayResult(int strike, int ball) {
+        gameStatus = GameStatus.from(strike);
         this.strike = strike;
         this.ball = ball;
     }
 
-    public static PlayResult craeteDefaultResult(){
+    public static PlayResult craeteDefaultResult() {
         return new PlayResult();
     }
-    public static PlayResult createStrikeOutResult(){
-        return new PlayResult(GameStatus.STRIKE_OUT, 3,3);
-    }
-    public static PlayResult createStrikeBallResult(int strike, int ball){
-        return new PlayResult(GameStatus.PLAYING, strike, ball);
+
+    public static PlayResult createStrikeOutResult() {
+        return new PlayResult(3, 0);
     }
 
+    public static PlayResult createStrikeBallResult(int strike, int ball) {
+        return new PlayResult(strike, ball);
+    }
+
+    public boolean isFinish() {
+        return gameStatus == GameStatus.STRIKE_OUT;
+    }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
 }

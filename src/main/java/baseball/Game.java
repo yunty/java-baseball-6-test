@@ -1,15 +1,10 @@
 package baseball;
 
-import camp.nextstep.edu.missionutils.Randoms;
-import java.util.List;
-
 public class Game {
-    boolean gameStatus;
-    GameNumber answer;
+    private final GameNumber answer;
     PlayResult playResult;
 
     private Game() {
-        this.gameStatus = false;
         this.answer = GameNumber.create(RandomNumberGenerator.create());
         this.playResult = PlayResult.craeteDefaultResult();
     }
@@ -18,7 +13,11 @@ public class Game {
         return new Game();
     }
 
-    public void judge(GameNumber userInput){
+    public void judge(GameNumber userInput) {
         playResult = answer.judge(userInput);
+    }
+
+    public boolean isNotFinish() {
+        return playResult.isFinish() == false;
     }
 }

@@ -9,7 +9,9 @@ public enum OutputConstant {
     OutputConstant(String comment) {
         this.comment = comment;
     }
-    public String print(){
+
+    public String print() {
         return comment;
     }
+
 }
