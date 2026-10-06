@@ -18,7 +18,7 @@ public class Game {
         return new Game();
     }
 
-    public PlayResult judge(GameNumber userInput){
+    public void judge(GameNumber userInput){
         playResult = answer.judge(userInput);
     }
 }
