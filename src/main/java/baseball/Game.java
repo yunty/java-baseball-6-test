@@ -14,7 +14,7 @@ public class Game {
         this.playResult = PlayResult.craeteDefaultResult();
     }
 
-    public Game create() {
+    public static Game create() {
         return new Game();
     }
 
