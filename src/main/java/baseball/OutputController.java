@@ -16,4 +16,10 @@ public class OutputController {
         String result = ResultFormat.from(resultDTO.strike(), resultDTO.ball()).format(resultDTO.strike(),resultDTO.ball());
         OutputView.printResult(result);
     }
+    public static void printCorrect(){
+        OutputView.println(OutputConstant.CORRECT_NOTICE);
+    }
+    public static void printRestart(){
+        OutputView.println(OutputConstant.RETRY_NOTICE);
+    }
 }

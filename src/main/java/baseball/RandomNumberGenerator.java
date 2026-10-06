@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomNumberGenerator {
-    private static final int RANGE_START = 0;
+    private static final int RANGE_START = 1;
     private static final int RANGE_END = 9;
     private static final int COUNT = 3;
 
