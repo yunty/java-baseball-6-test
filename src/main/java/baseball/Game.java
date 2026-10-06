@@ -1,14 +1,24 @@
 package baseball;
 
+import camp.nextstep.edu.missionutils.Randoms;
+import java.util.List;
+
 public class Game {
     boolean gameStatus;
-    GameAnswer gameAnswer;
+    GameNumber answer;
     PlayResult playResult;
-    private Game(){
+
+    private Game() {
         this.gameStatus = false;
-        this.gameAnswer = GameAnswer.create();
+        this.answer = GameNumber.create(RandomNumberGenerator.create());
+        this.playResult = PlayResult.craeteDefaultResult();
     }
-    public Game create(){
+
+    public Game create() {
         return new Game();
+    }
+
+    public PlayResult judge(GameNumber userInput){
+        playResult = answer.judge(userInput);
     }
 }
